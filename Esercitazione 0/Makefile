@@ -1,11 +1,11 @@
-Driver.exe: Driver.o Primo.o
-	g++ -o Driver.exe Driver.o Primo.o
+Driver.exe: Driver.o Eser_0.o
+	g++ -o Driver.exe Driver.o Eser_0.o
 
-Primo.o: Primo.cpp Primo.hpp
-	g++ -c -Wall Primo.cpp Primo.hpp
+Eser_0.o: Eser_0.cpp Eser_0.hpp
+	g++ -c -Wall Eser_0.cpp Eser_0.hpp
 
-Driver.o: Driver.cpp Primo.hpp
-	g++ -c -Wall Driver.cpp Primo.hpp
+Driver.o: Driver.cpp Eser_0.hpp
+	g++ -c -Wall Driver.cpp Eser_0.hpp
 
 clean: 	
 	rm -f Driver.exe

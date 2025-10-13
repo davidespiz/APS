@@ -1,14 +1,13 @@
 #include <iostream>
 using namespace std;
 
-#include "Primo.hpp"
+#include "Eser_0.hpp"
 #include <cmath>
 
 int main()
 {
-   int n;
-   cin >> n;
-   
-   stampaPerfetti(n);
-
+   for (int i = 1; i <= 100; i++)
+      if(numFelice(i) == true)
+         cout << i << ", ";
+   cout << endl;
 }

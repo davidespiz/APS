@@ -44,7 +44,7 @@ int NumeroDistintiVettore(int v[], int n)
   return tot;
 }
 
-bool contieneVettore(int v[], int n)
+bool contiene(int v[], int n)
 {
   for(int i = 0; i < n; i++)
     if(v[i] == n) 
