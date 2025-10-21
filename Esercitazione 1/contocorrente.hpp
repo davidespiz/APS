@@ -13,8 +13,12 @@ class ContoCorrente
    unsigned SaldoInEuro() const {return contoEuro;}
    unsigned SaldoCentesimi() const {return contoCent;};
 
-   void DepositaEuro(unsigned unita, unsigned centesimi);
    double SaldoInLire() const;
+   void DepositaEuro(unsigned unita, unsigned centesimi);
+   void PrelevaEuro(unsigned unita, unsigned centesimi);
+   void AggiornaSaldo();
+   void FissaTassoInteresse(double t);
+   
 
 
    private:

@@ -9,3 +9,9 @@ contocorrente.o: contocorrente.cpp contocorrente.hpp
 
 clean: 	
 	rm -f Driver.exe
+
+DriverConto.exe: DriverConto.o contocorrente.o
+	g++ -o DriverConto.exe DriverConto.o contocorrente.o
+
+DriverConto.o: DriverConto.cpp contocorrente.hpp
+	g++ -c -Wall DriverConto.cpp contocorrente.hpp
