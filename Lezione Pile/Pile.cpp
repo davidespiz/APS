@@ -46,3 +46,33 @@ void Pila::Push(int elem)
    }
    vet[++top] = elem;
 }
+
+Pila& Pila::operator=(const Pila& p)
+{
+	//se l'indice del top è maggiore di dim devo riallocare 
+	if(p.top >= dim)
+	{
+		delete[] vet;
+		dim = p.dim;
+		vet = new int[dim];
+	}
+	top = p.top;
+	for(int i = 0; i < top; i++)
+	vet[i] = p.vet[i];
+	return *this;
+}
+
+Pila::Pila(const Pila& p)
+{
+	//in questo caso non devo chiedermi se riallocare, la pila non esiste
+	dim = p.dim;
+	top = p.top;
+	vet = new int[dim];
+	for(int i = 0; i < dim; i++)
+	vet[i] = p.vet[i];
+} 
+
+Pila::~Pila()
+{
+	delete[] vet;   //distruggo solo la parte dinamica 
+}
