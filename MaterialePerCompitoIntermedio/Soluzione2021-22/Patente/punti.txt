@@ -1,0 +1,11 @@
+Mario -2 
+Paolo -13
+Marco -7
+Anna -4
+Paolo -4 
+Paolo +2
+Anna -6
+Anna -6
+Paolo -6
+Paolo +4
+Anna +2

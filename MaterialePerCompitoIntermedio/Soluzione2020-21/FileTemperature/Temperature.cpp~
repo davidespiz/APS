@@ -1,0 +1,69 @@
+/* Un file contiene (una per righe) l'insieme delle temperature registrate in un insieme di date. Ciascuna riga è composta dalla data, dal numero di misurazioni e dalla sequenza delle misurazioni. Come esempio si consideri il seguente file. Si scriva una funzione che prenda come parametro il nome di un file siffatto (con almeno una riga) e restituisca la data con maggiore escursione termica. La funzione deve restituire la coppia formata dalla data e dal vettore di tutte le temperature registrate in quella data. 
+
+Si consideri disponibile la funzione Estremo che prende come parametri un vettore di double e un booleano e restituisce il massimo o il minimo del vettore, a seconda se il booleano passato come secondo parametro sia true o false, rispettivamente */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include "Data.hpp"
+
+using namespace std;
+
+double Estremo(const vector<double>& v, bool max)
+{
+  if (max)
+    return *max_element(v.begin(), v.end());
+  else
+    return *min_element(v.begin(), v.end());
+}
+
+pair<Data,vector<double>> MassimaEscursioneTermica(string nome_file)
+{
+  ifstream is(nome_file);
+  Data d, d_max;
+  vector<double> v, v_max;
+  double escursione, escursione_max = 0, temp;
+  unsigned num, i;
+  
+  while(is >> d >> num)
+    {
+      v.clear();
+      for (i = 0; i < num; i++)
+        {
+          is >> temp;
+          is.get();
+          cerr << temp << " ";
+          v.push_back(temp);
+        }
+      escursione = Estremo(v,true) - Estremo(v,false);
+      cerr << d << " " << num << " " << escursione << endl;
+      if (escursione > escursione_max)
+        {
+          escursione_max = escursione;
+          v_max = v;
+          d_max = d;
+        } 
+    }
+  return make_pair(d_max, v_max); 
+}
+
+int main(int argc, char* argv[])
+{
+  pair<Data,vector<double>> temperature;
+ 
+  if (argc < 2)
+    {
+      cerr << "Inserire il nome del file in input" << endl;
+      return 1;
+    }
+  temperature =  MassimaEscursioneTermica(argv[1]);
+  cout << "La data e' " << temperature.first << endl;
+
+  Data d1(2020), d2(2019), d3(2018);
+
+  cout << d1 << " " << d2 << " " << d3 << endl;
+
+
+  return 0;
+}
