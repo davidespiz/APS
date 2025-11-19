@@ -109,6 +109,42 @@ int operator-(const Data& d1, const Data& d2)
    return g;
 }
 
+Data operator+(const Data& d, const int& g)
+{
+   Data aux_d(d);
+   for(int i = 0; i < g; i++)
+      ++aux_d;
+   return aux_d;
+}
+
+Data Data::operator+(const int& g) const
+{
+   Data aux_d(*this);
+   for(int i = 0; i < g; i++)
+      ++aux_d;
+   return aux_d;
+}
+
+Data Data::operator-(const int& g) const
+{
+   Data aux_d(*this);
+   for(int i = 0; i < g; i++)
+      --aux_d;
+   return aux_d;
+}
+
+void Data::operator+=(const int& g) 
+{
+   for(int i = 0; i < g; i++)
+      ++(*this);  
+}
+
+void Data::operator-=(const int& g) 
+{
+   for(int i = 0; i < g; i++)
+      --(*this);  
+}
+
 bool operator<(const Data& d1, const Data& d2) 
 {
    int data1 = d1.anno * 10000 + d1.mese *100 + d1.giorno;
@@ -119,4 +155,11 @@ bool operator<(const Data& d1, const Data& d2)
 bool operator==(const Data& d1, const Data& d2)
 {
    return d1.giorno == d2.giorno && d1.mese == d2.mese && d1.anno == d2.anno;
+}
+
+Data::Data(const Data& d)
+{
+   giorno = d.giorno;
+   mese = d.mese;
+   anno = d.anno;
 }

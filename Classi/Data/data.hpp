@@ -14,8 +14,13 @@ class Data
    public:
       Data();
       Data(unsigned g, unsigned m, unsigned a);
+      Data(const Data& d);
       void operator++();
       void operator--();
+      Data operator+(const int& g) const;
+      Data operator-(const int& g) const;
+      void operator+=(const int& g);
+      void operator-=(const int& g);
    private:
       unsigned giorno;
       unsigned mese; 
