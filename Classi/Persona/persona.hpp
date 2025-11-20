@@ -12,6 +12,7 @@ class Persona
 {
    friend istream& operator>>(istream& is, Persona& p);
    friend ostream& operator<<(ostream& os, const Persona& p);
+   friend bool operator<(const Persona& p1, const Persona& p2);   //se voglio utilizzare sort devo creare operatore <
    public:
       Persona(){}
       Persona(string n, string c, Data d, string city); 

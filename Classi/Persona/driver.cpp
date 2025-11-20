@@ -16,7 +16,7 @@ int main(int argv, char* argc[])
       nome_f = argc[1];
    else
       exit(1); 
-   //OrdinaFile(nome_f);
+   OrdinaFile(nome_f);
    LeggiPersone(p, nome_f);
    pair<string, unsigned> out;
    out = NomeFrequente(p);

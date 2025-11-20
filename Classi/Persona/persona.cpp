@@ -34,23 +34,26 @@ void LeggiPersone(vector<Persona>& v, const string& nome_file)
    is.close();
 }
 
-// void OrdinaFile(const string& nome_file)
-// {
-//    ifstream is(nome_file);
-//    vector<Persona> v;
-//    Persona pers;
+void OrdinaFile(const string& nome_file)
+{
+   ifstream is(nome_file);
+   vector<Persona> v;
+   Persona pers;
       
-//    while(is >> pers)
-//       v.push_back(pers);
-
-//    sort(v.begin(),v.end());
+   while(is >> pers)
+      v.push_back(pers);
+   is.close();                //devo chiuderlo priima di scrivere
+   sort(v.begin(),v.end());
    
-//    ofstream os(nome_file);
-//    for (unsigned i = 0; i < v.size(); i++)
-//       os << v[i] << endl;
-//    os.close();
-//    is.close();
-// }
+   ofstream os(nome_file);
+   for (unsigned i = 0; i < v.size(); i++)
+   {
+      os << v[i] << endl;
+      if(i != v.size())
+         os << endl;
+   }
+   os.close();
+}
 
 pair<string, unsigned> NomeFrequente(const vector<Persona>& v)
 {
@@ -71,4 +74,9 @@ pair<string, unsigned> NomeFrequente(const vector<Persona>& v)
       if(occ[i].second > occ[max].second)
          max = i;
    return occ[max];
+}
+
+bool operator<(const Persona& p1, const Persona& p2)
+{
+   return (p1.data_nascita < p2.data_nascita) || (p1.data_nascita == p2.data_nascita && p1.cognome < p2.cognome); 
 }
