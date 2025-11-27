@@ -6,6 +6,7 @@ class Poli
 {
    friend Poli operator+(const Poli& p1, const Poli& p2);
    friend Poli operator-(const Poli& p1, const Poli& p2);
+   friend Poli operator*(const Poli& p1, const Poli& p2);
    friend ostream& operator<<(ostream& os, const Poli& p);
    friend istream& operator>>(istream& is, Poli& p);
    public:

@@ -20,11 +20,11 @@ int main(int argc, char* argv[])
       nome_file = argv[argc - 1];
    is.open(nome_file);
 
-   Poli p1;
-   is >> p1;
-   Poli p2(p1);
+   Poli p1, p2;
+   cin >> p1 >> p2;
+
    //p1 = p1 + p2;
-   cout << p2(1) << endl;
+   cout << p1 * p2 << endl;
 
    is.close();
    return 0;

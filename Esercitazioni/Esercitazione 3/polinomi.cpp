@@ -121,3 +121,16 @@ float Poli::operator()(float x)  //restituisce il valore del polinomio in x
       y += vet[i] * pow(x, i);
    return y;
 }
+
+Poli operator*(const Poli& p1, const Poli& p2)
+{
+   Poli ris;
+   ris.dim = p1.dim + p2.dim;
+   ris.vet = new float[ris.dim + 1];
+   for(int i = 0; i < ris.dim; i++)
+      ris.vet[i] = 0.0;
+   for(int i = p1.dim; i > 0; i--)
+      for(int k = p2.dim; k > 0; k--)
+         ris.vet[i+k] += p1.vet[i] * p2.vet[k];
+   return ris;
+}
