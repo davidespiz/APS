@@ -1,0 +1,57 @@
+-------------- Stato Anagrafe ------------------
+Comuni: 
+-Roma RM
+-Milano MI
+-Napoli NA
+-Udine UD
+-Feletto UD
+-Pordenone PN
+
+Persone: 
+-Giovanni Blu (m)
+3/2/2001  SanPaolo
+Roma
+
+-Mario Rossi (m)
+12/5/1975  Napoli
+Napoli
+
+-Valeria Bianchi (f)
+2/5/2001  Pontebba
+Roma
+
+-Marta Verdi (f)
+2/2/1974  Santiago
+Milano
+
+-Ugo Rossi (m)
+28/5/2003  Udine
+Milano
+
+-Andrea Gialli (m)
+12/12/2003  Roma
+Roma
+
+-Giovanna Gialli (f)
+12/7/1968  Los_Angeles
+Udine
+
+-Franco Marroni (m)
+24/3/1986  San_Vito_al_Tagliamento
+Udine
+
+-Mario Neri (m)
+20/4/2010  Udine
+Pordenone
+
+
+Coppie: 
+-Marta Verdi e Mario Rossi
+-Giovanna Gialli e Franco Marroni
+
+Genitore-Figlio: 
+-Marta Verdi madre di Valeria Bianchi
+-Mario Rossi padre di Ugo Rossi
+-Marta Verdi madre di Ugo Rossi
+-Franco Marroni padre di Mario Neri
+.
